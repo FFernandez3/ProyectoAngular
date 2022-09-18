@@ -1,0 +1,23 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Portada</td>
+            <td>Titulo</td>
+            <td>Genero</td>
+            <td>Capitulos</td>
+            <td>Año de emisión</td>
+            <td>Esta en emisión</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let kdrama of kdramas" [ngClass]="{'emision':kdrama.emision}">
+            <td><img [src]="kdrama.imagen" [alt]="kdrama.titulo"></td>
+            <td>{{kdrama.titulo | uppercase}}</td>
+            <td>{{kdrama.genero}}</td>
+            <td>{{kdrama.capitulos}}</td>
+            <td>{{kdrama.anio}}</td>
+            <td>{{kdrama.emision}}</td>
+        </tr>
+       
+    </tbody>
+</table>
