@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { KdramaListComponent } from './kdrama-list/kdrama-list.component';
 import { FormsModule } from '@angular/forms';
+import { KimchiAboutComponent } from './kimchi-about/kimchi-about.component';
+import { KimchiKdramasComponent } from './kimchi-kdramas/kimchi-kdramas.component';
+import { VistosComponent } from './vistos/vistos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    KdramaListComponent
+    KdramaListComponent,
+    KimchiAboutComponent,
+    KimchiKdramasComponent,
+    VistosComponent
   ],
   imports: [
     BrowserModule,

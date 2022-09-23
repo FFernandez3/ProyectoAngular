@@ -1,22 +1,19 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">{{title}}</a>
+    <a class="navbar-brand" [routerLink]="['/']" >{{title}}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Sobre mi</a>
-        <a class="nav-link" href="#">Más</a>
+        <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
+        <a class="nav-link" [routerLink]="['/about']" >Sobre mi</a>
+       
       </div>
     </div>
   </div>
 </nav>
 <div class="container">
-  <div class="row">
-    <div class="col-9"><app-kdrama-list></app-kdrama-list></div>
-    <div class="col-3">Vistos</div>
-  </div>
+ <router-outlet></router-outlet>
 </div>
 <footer>{{title}} 2022</footer>
