@@ -1,12 +1,13 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <td>Portada</td>
-            <td>Titulo</td>
-            <td>Genero</td>
-            <td>Capitulos</td>
-            <td>Año de emisión</td>
-            <td>Esta en emisión</td>
+            <th>Portada</th>
+            <th>Titulo</th>
+            <th>Genero</th>
+            <th>Capitulos</th>
+            <th>Año de emisión</th>
+            <th>Esta en emisión</th>
+            <th>Puntaje</th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +18,11 @@
             <td>{{kdrama.capitulos}}</td>
             <td>{{kdrama.anio}}</td>
             <td>{{kdrama.emision}}</td>
+            <td>
+                <button class="btn btn-outline-dark btn-sm" (click)="bajarPuntaje(kdrama)">-</button>
+                <input type="number" [(ngModel)]="kdrama.puntaje" (keyup)="cambiarPuntaje($event, kdrama)">
+                <button class="btn btn-outline-dark btn-sm" (click)="subirPuntaje(kdrama)">+</button>
+            </td>
         </tr>
        
     </tbody>

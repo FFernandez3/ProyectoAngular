@@ -16,6 +16,7 @@ export class KdramaListComponent implements OnInit {
       anio:2018, 
       imagen:"assets/img/mrSunshine.webp",
       emision:false,
+      puntaje:0,
     },
     {
       titulo:"la flor del mal",
@@ -24,6 +25,7 @@ export class KdramaListComponent implements OnInit {
       anio:2020, 
       imagen:"assets/img/laFlorDelMal.webp",
       emision:false,
+      puntaje:0,
     },
     {
       titulo:"alquimia de almas",
@@ -32,12 +34,31 @@ export class KdramaListComponent implements OnInit {
       anio:2022, 
       imagen:"assets/img/aterrizaje.webp",
       emision:true,
+      puntaje:0,
     },
 
   ];
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  subirPuntaje(kdrama :Kdrama): void{
+    if (kdrama.puntaje<10)
+    kdrama.puntaje++;
+
+  }
+  bajarPuntaje(kdrama :Kdrama): void{
+    if (kdrama.puntaje>0){
+      kdrama.puntaje--;
+    }
+      
+
+  }
+  cambiarPuntaje(event:Event, kdrama:Kdrama): void{
+   
+    
+    console.log(event);
   }
 
 }
