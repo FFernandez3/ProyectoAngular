@@ -20,9 +20,7 @@
             <td>{{kdrama.anio}}</td>
             <td>{{kdrama.emision}}</td>
             <td>
-                <button class="btn btn-outline-dark btn-sm" (click)="bajarPuntaje(kdrama)">-</button>
-                <input type="number" [(ngModel)]="kdrama.puntaje" (keyup)="cambiarPuntaje($event, kdrama)">
-                <button class="btn btn-outline-dark btn-sm" (click)="subirPuntaje(kdrama)">+</button>
+                <app-input-integer [(puntaje)]="kdrama.puntaje" (maxReached)="maxReached($event)"></app-input-integer> <!--el output hace que funcionen los ()y el input los []-->
             </td>
         </tr>
        

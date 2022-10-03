@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { max } from 'rxjs';
 import { Kdrama } from './Kdrama';
 
 @Component({
@@ -38,27 +39,13 @@ export class KdramaListComponent implements OnInit {
     },
 
   ];
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
+maxReached(m:string){
+  alert(m);
+}
 
-  subirPuntaje(kdrama :Kdrama): void{
-    if (kdrama.puntaje<10)
-    kdrama.puntaje++;
-
-  }
-  bajarPuntaje(kdrama :Kdrama): void{
-    if (kdrama.puntaje>0){
-      kdrama.puntaje--;
-    }
-      
-
-  }
-  cambiarPuntaje(event:Event, kdrama:Kdrama): void{
-   
-    
-    console.log(event);
-  }
 
 }

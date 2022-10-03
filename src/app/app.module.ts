@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { KimchiAboutComponent } from './kimchi-about/kimchi-about.component';
 import { KimchiKdramasComponent } from './kimchi-kdramas/kimchi-kdramas.component';
 import { VistosComponent } from './vistos/vistos.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { VistosComponent } from './vistos/vistos.component';
     KdramaListComponent,
     KimchiAboutComponent,
     KimchiKdramasComponent,
-    VistosComponent
+    VistosComponent,
+    InputIntegerComponent
   ],
   imports: [
     BrowserModule,
