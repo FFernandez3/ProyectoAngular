@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { max } from 'rxjs';
+import { catchError, max } from 'rxjs';
+import { ListaKdramasVistosService } from '../lista-kdramas-vistos.service';
 import { Kdrama } from './Kdrama';
 
 @Component({
@@ -17,6 +18,7 @@ export class KdramaListComponent implements OnInit {
       anio:2018, 
       imagen:"assets/img/mrSunshine.webp",
       emision:false,
+      visto:false,
       puntaje:0,
     },
     {
@@ -26,6 +28,7 @@ export class KdramaListComponent implements OnInit {
       anio:2020, 
       imagen:"assets/img/laFlorDelMal.webp",
       emision:false,
+      visto:false,
       puntaje:0,
     },
     {
@@ -35,13 +38,23 @@ export class KdramaListComponent implements OnInit {
       anio:2022, 
       imagen:"assets/img/aterrizaje.webp",
       emision:true,
+      visto: false,
       puntaje:0,
     },
 
   ];
-  constructor() {}
+
+ 
+  constructor(private listaVistos : ListaKdramasVistosService) {
+    
+  }
 
   ngOnInit(): void {
+  }
+
+  agregarAVistos (kdrama: Kdrama):void{
+    this.listaVistos.agregarAVistos(kdrama);
+    kdrama.visto=true;
   }
 maxReached(m:string){
   alert(m);

@@ -8,6 +8,7 @@
             <th>Capitulos</th>
             <th>Año de emisión</th>
             <th>Esta en emisión</th>
+            <th>Visto</th>
             <th>Puntaje</th>
         </tr>
     </thead>
@@ -19,8 +20,10 @@
             <td>{{kdrama.capitulos}}</td>
             <td>{{kdrama.anio}}</td>
             <td>{{kdrama.emision}}</td>
+            <td>{{kdrama.visto}}</td>
             <td>
                 <app-input-integer [(puntaje)]="kdrama.puntaje" (maxReached)="maxReached($event)"></app-input-integer> <!--el output hace que funcionen los ()y el input los []-->
+                <button class="btn btn-primary" (click)="agregarAVistos(kdrama)">Visto</button>
             </td>
         </tr>
        

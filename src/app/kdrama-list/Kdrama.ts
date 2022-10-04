@@ -5,6 +5,7 @@ export interface Kdrama{
     anio: number;
     imagen: string;
     emision:boolean;
+    visto:boolean;
     puntaje:number;
 
 }
