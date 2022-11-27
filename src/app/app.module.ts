@@ -10,6 +10,8 @@ import { KimchiKdramasComponent } from './kimchi-kdramas/kimchi-kdramas.componen
 import { VistosComponent } from './vistos/vistos.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
 
+import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,7 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

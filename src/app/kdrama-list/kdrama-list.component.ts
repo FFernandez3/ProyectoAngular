@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { catchError, max } from 'rxjs';
 import { ListaKdramasVistosService } from '../lista-kdramas-vistos.service';
+import { KdramaDataService } from '../kdrama-data.service';
 import { Kdrama } from './Kdrama';
 
 @Component({
@@ -10,55 +11,24 @@ import { Kdrama } from './Kdrama';
 })
 export class KdramaListComponent implements OnInit {
 
-  kdramas : Kdrama[]=[
-    {
-      titulo:"mr. Sunshine",
-      genero: "Historico",
-      capitulos: 24,
-      anio:2018, 
-      imagen:"assets/img/mrSunshine.webp",
-      emision:false,
-      visto:false,
-      puntaje:0,
-    },
-    {
-      titulo:"la flor del mal",
-      genero: "Thriller",
-      capitulos: 16,
-      anio:2020, 
-      imagen:"assets/img/laFlorDelMal.webp",
-      emision:false,
-      visto:false,
-      puntaje:0,
-    },
-    {
-      titulo:"alquimia de almas",
-      genero: "Romance",
-      capitulos: 20,
-      anio:2022, 
-      imagen:"assets/img/aterrizaje.webp",
-      emision:true,
-      visto: false,
-      puntaje:0,
-    },
+  kdramas: Kdrama[] = [];
 
-  ];
 
- 
-  constructor(private listaVistos : ListaKdramasVistosService) {
-    
+  constructor(private listaVistos: ListaKdramasVistosService, private kdramasDataService: KdramaDataService) {
+
   }
-
+  //se dispara cunado el componenete esta en pantalla
   ngOnInit(): void {
+    this.kdramasDataService.getAll()
+    .subscribe(kdramas=>this.kdramas= kdramas);
   }
-
-  agregarAVistos (kdrama: Kdrama):void{
+  agregarAVistos(kdrama: Kdrama): void {
     this.listaVistos.agregarAVistos(kdrama);
-    kdrama.visto=true;
+    kdrama.visto = true;
   }
-maxReached(m:string){
-  alert(m);
-}
+  maxReached(m: string) {
+    alert(m);
+  }
 
 
 }

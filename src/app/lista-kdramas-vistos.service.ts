@@ -7,21 +7,21 @@ import { Kdrama } from './kdrama-list/Kdrama';
 })
 export class ListaKdramasVistosService {
 
-  private _listaVistos: Kdrama[]=[];
-  listaVistos: BehaviorSubject<Kdrama[]>= new BehaviorSubject(this._listaVistos);
+  private _listaVistos: Kdrama[] = [];
+  listaVistos: BehaviorSubject<Kdrama[]> = new BehaviorSubject(this._listaVistos);
   constructor() { }
 
   agregarAVistos(kdrama: Kdrama) {
-   let item= this._listaVistos.find((v1)=>v1.titulo==kdrama.titulo);
-   if (!item){ //si no esta lo agrego
-    this._listaVistos.push({...kdrama}); //pusheo una copia
-    //console.log(this.listaVistos.length);
+    let item = this._listaVistos.find((v1) => v1.titulo == kdrama.titulo);
+    if (!item) { //si no esta lo agrego
+      this._listaVistos.push({ ...kdrama }); //pusheo una copia
+      //console.log(this.listaVistos.length);
 
-   } else { //cuando lo encuentro
-    
-   }
-   console.log(this.listaVistos);
-   this.listaVistos.next(this._listaVistos);
+    } else { //cuando lo encuentro, puedo cambiarle el puntaje
+      item.puntaje = kdrama.puntaje;
+    }
+    console.log(this._listaVistos);
+    this.listaVistos.next(this._listaVistos);
 
   }
 }

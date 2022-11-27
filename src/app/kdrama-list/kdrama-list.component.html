@@ -13,13 +13,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let kdrama of kdramas" [ngClass]="{'emision':kdrama.emision}">
+        <tr *ngFor="let kdrama of kdramas" [ngClass]="{'emision':kdrama.estaEnEmision}">
             <td><img [src]="kdrama.imagen" [alt]="kdrama.titulo"></td>
             <td>{{kdrama.titulo | uppercase}}</td>
             <td>{{kdrama.genero}}</td>
             <td>{{kdrama.capitulos}}</td>
             <td>{{kdrama.anio}}</td>
-            <td>{{kdrama.emision}}</td>
+            <td>{{kdrama.estaEnEmision}}</td>
             <td>{{kdrama.visto}}</td>
             <td>
                 <app-input-integer [(puntaje)]="kdrama.puntaje" (maxReached)="maxReached($event)"></app-input-integer> <!--el output hace que funcionen los ()y el input los []-->
