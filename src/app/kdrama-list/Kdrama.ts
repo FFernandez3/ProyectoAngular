@@ -3,7 +3,7 @@ export interface Kdrama{
     genero: string;
     capitulos: number;
     anio: number;
-    imagen: string;
+    portada: string;
     estaEnEmision:boolean;
     visto:boolean;
     puntaje:number;

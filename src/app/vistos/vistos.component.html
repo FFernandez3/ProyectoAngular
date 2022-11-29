@@ -1,6 +1,27 @@
-<h3>Vistos</h3>
-<ul>
-    <li *ngFor="let k of (listaVistos$ | async)">
-        {{k.titulo}}: {{k.puntaje}}
-    </li>
-</ul>
+<h3>Dramas vistos</h3>
+
+<table class="table table-striped text-center">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Titulo</th>
+            <th>Genero</th>
+            <th>Capitulos</th>
+            <th>Año de emisión</th>
+            <th>Esta en emisión</th>
+            <th>Puntaje</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let k of (listaVistos$ | async)">
+            <td><img [src]="k.portada" [alt]="k.titulo" class="img-kdrama"></td>
+            <td>{{k.titulo | uppercase}}</td>
+            <td>{{k.genero}}</td>
+            <td>{{k.capitulos}}</td>
+            <td>{{k.anio}}</td>
+            <td>{{k.estaEnEmision}}</td>
+            <td>{{k.puntaje}}</td>
+        </tr>
+
+    </tbody>
+</table>

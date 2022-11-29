@@ -20,7 +20,7 @@ export class KdramaListComponent implements OnInit {
   //se dispara cunado el componenete esta en pantalla
   ngOnInit(): void {
     this.kdramasDataService.getAll()
-    .subscribe(kdramas=>this.kdramas= kdramas);
+      .subscribe(kdramas => this.kdramas = kdramas);
   }
   agregarAVistos(kdrama: Kdrama): void {
     this.listaVistos.agregarAVistos(kdrama);

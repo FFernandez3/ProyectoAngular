@@ -1,31 +1,15 @@
-<h3>Lista de dramas</h3>
-<table class="table table-striped text-center">
-    <thead>
-        <tr>
-            <th>Portada</th>
-            <th>Titulo</th>
-            <th>Genero</th>
-            <th>Capitulos</th>
-            <th>Año de emisión</th>
-            <th>Esta en emisión</th>
-            <th>Visto</th>
-            <th>Puntaje</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let kdrama of kdramas" [ngClass]="{'emision':kdrama.estaEnEmision}">
-            <td><img [src]="kdrama.imagen" [alt]="kdrama.titulo"></td>
-            <td>{{kdrama.titulo | uppercase}}</td>
-            <td>{{kdrama.genero}}</td>
-            <td>{{kdrama.capitulos}}</td>
-            <td>{{kdrama.anio}}</td>
-            <td>{{kdrama.estaEnEmision}}</td>
-            <td>{{kdrama.visto}}</td>
-            <td>
-                <app-input-integer [(puntaje)]="kdrama.puntaje" (maxReached)="maxReached($event)"></app-input-integer> <!--el output hace que funcionen los ()y el input los []-->
-                <button class="btn btn-primary" (click)="agregarAVistos(kdrama)">Visto</button>
-            </td>
-        </tr>
-       
-    </tbody>
-</table>
+<h3>Dramas</h3>
+<div class="cards-container">
+    <div class="card" style="width: 18rem;" *ngFor="let kdrama of kdramas" [ngClass]="{'emision':kdrama.estaEnEmision}">
+        <img [src]="kdrama.portada" [alt]="kdrama.titulo" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{kdrama.titulo | uppercase}}</h5>
+            <p class="card-text">{{kdrama.anio}}</p>
+            <p *ngIf="kdrama.visto==true" class="card-text">¡Fue agregado a tu lista!</p>
+            <app-input-integer [(puntaje)]="kdrama.puntaje" (maxReached)="maxReached($event)"></app-input-integer>
+            <button class="btn btn-primary" (click)="agregarAVistos(kdrama)">Puntuar</button>
+        </div>
+    </div>
+
+
+</div>

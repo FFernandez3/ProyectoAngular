@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+
+img {
+    height: 20rem;
+    width: auto;
+    padding: 1%;
+}
+
+.div-imagenes {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+h1,
+p {
+    text-align: center;
+}
+
+h1 {
+    font-family: Caveat;
+}

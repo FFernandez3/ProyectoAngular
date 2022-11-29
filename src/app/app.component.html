@@ -1,19 +1,22 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" [routerLink]="['/']" >{{title}}</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" [routerLink]="['/']">{{title}}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
-        <a class="nav-link" [routerLink]="['/about']" >Sobre mi</a>
-       
+        <a class="nav-link" [routerLink]="['/kdramas']">Kdramas</a>
+        <a class="nav-link" [routerLink]="['/vistos']">Mi lista</a>
+        <a class="nav-link" [routerLink]="['/about']">Sobre mi</a>
+
       </div>
     </div>
   </div>
 </nav>
 <div class="container">
- <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
-<footer>{{title}} 2022</footer>
+<footer>{{title}} 2022 - All content copyright © & Trademarked of their respective owners. All rights reserved.</footer>

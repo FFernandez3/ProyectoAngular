@@ -11,6 +11,7 @@ import { VistosComponent } from './vistos/vistos.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 import {HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {HttpClientModule} from '@angular/common/http';
     KimchiAboutComponent,
     KimchiKdramasComponent,
     VistosComponent,
-    InputIntegerComponent
+    InputIntegerComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

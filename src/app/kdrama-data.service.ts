@@ -15,9 +15,9 @@ export class KdramaDataService {
   public getAll(): Observable<Kdrama[]> {
     //esto ddevuelve un observable del arreglo json
     return this.http.get<Kdrama[]>(URL)
-            .pipe(
-              tap((kdramas: Kdrama[])=>kdramas.forEach(kdrama=>kdrama.puntaje=0))
+      .pipe(
+        tap((kdramas: Kdrama[]) => kdramas.forEach(kdrama => kdrama.puntaje = 0))
 
-            ); 
+      );
   }
 }
