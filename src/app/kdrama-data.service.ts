@@ -20,4 +20,12 @@ export class KdramaDataService {
 
       );
   }
+
+
+  public add(kdrama: { titulo: string, genero: string, anio: number, capitulos: number, estaEnEmision: boolean, portada: string }) {
+   return  this.http.post(URL, kdrama);
+
+  }
+
+
 }

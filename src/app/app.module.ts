@@ -12,6 +12,7 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { AgregarKdramaComponent } from './agregar-kdrama/agregar-kdrama.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomeComponent } from './home/home.component';
     KimchiKdramasComponent,
     VistosComponent,
     InputIntegerComponent,
-    HomeComponent
+    HomeComponent,
+    AgregarKdramaComponent
   ],
   imports: [
     BrowserModule,
